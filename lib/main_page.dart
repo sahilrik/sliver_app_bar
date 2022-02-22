@@ -7,12 +7,9 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: NestedScrollView(
+        floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
-            floating: true,
-            snap: false,
-            pinned: true,
-            expandedHeight: 250,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('sliver app bar'),
               background: Image.network(
@@ -20,6 +17,10 @@ class MainPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+            floating: true,
+            snap: false,
+            pinned: true,
+            expandedHeight: 240,
           ),
         ],
         body: ListView.separated(
